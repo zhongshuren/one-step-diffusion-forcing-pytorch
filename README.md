@@ -51,10 +51,12 @@ Each training sample is a trajectory with a length of 64, and roughly forms a ci
 The test samples are generated in an autoregressive manner and is extrapolated to 256 timesteps. With 1-NFE per timestep, the model can keep the property of the circular arc (center, diameter, tec.) in the extrapolated timesteps.
 
 results with our method
+
 ![](assets/flow_forcing_1_19.png)
 
 results with predictive loss (the model can't learn anything)
-![](assets/deterministic_1_19.png)
+
+![](assets/deterministic_19.png)
 
 ## Run the demo
 1. Create a Python environment (version 3.10 is suggested)
