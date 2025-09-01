@@ -2,7 +2,7 @@
 
 If you're looking to address two persistent challenges in interactive generative models: high latency and drifting, this demo offers a compelling starting point.
 
-Built upon recent advances such as [Diffusion Forcing](https://arxiv.org/abs/2407.01392), [Shortcut Model](https://arxiv.org/abs/2410.12557) and [Mean Flow](https://arxiv.org/abs/2505.13447), this repository combines these techniques into a unified, end-to-end training framework for a stable 1-NFE (Number of Function Evaluations) autoregressive diffusion model.
+Built upon recent advances such as [Diffusion Forcing](https://arxiv.org/abs/2407.01392), [Shortcut Model](https://arxiv.org/abs/2410.12557), and [Mean Flow](https://arxiv.org/abs/2505.13447), this repository combines these techniques into a unified, end-to-end training framework for a stable 1-NFE (Number of Function Evaluations) autoregressive diffusion model.
 
 At each inference timestep, the model takes in:
 - Random noise
@@ -47,8 +47,8 @@ loss = loss1 + loss2
 
 ## Evaluation result on toy dataset
 
-Each training sample is a trajectory with a length of 64, and roughly forms a circular arc.
-The test samples are generated in an autoregressive manner and is extrapolated to 256 timesteps. With 1-NFE per timestep, the model can keep the property of the circular arc (center, diameter, tec.) in the extrapolated timesteps.
+Each training sample is a trajectory with a length of 64 and roughly forms a circular arc.
+The test samples are generated in an autoregressive manner and are extrapolated to 256 timesteps. With 1-NFE per timestep, the model can retain the properties of the circular arc (center, diameter, etc.) in the extrapolated timesteps.
 
 results with our method
 
@@ -68,7 +68,7 @@ python main.py
 
 ## TODO
 
-Currently, we use GRU/LSTM as the sequence model, we will later try to use modern RNN architectures (Mamba, TTT, etc.). (Transformers for temporal processing is not considered as an option here, because we want to have infinite memory in a contrained memory space)
+Currently, we use GRU/LSTM as the sequence model; we will later try to use modern RNN architectures (Mamba, TTT, etc.). (Transformers for temporal processing are not considered as an option here, because we want to have infinite memory in a constrained memory space)
 
 ## Code references
 https://github.com/zhongshuren/one-step-diffusion-pytorch
