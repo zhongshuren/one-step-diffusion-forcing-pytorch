@@ -45,7 +45,7 @@ class DiffusionForcingLoss(nn.Module):
         v_tmt2 = self.v(z1 + v_t1tm * (tm - t1), tm, t2, c, z2)
         v_t1tmt2 = v_t1tm + v_tmt2
 
-        loss1 = F.mse_loss(v_t0, v_tgt) # ReFlow loss
+        loss1 = F.mse_loss(v_t0, v_tgt) # Flow Matching loss
         loss2 = F.mse_loss(v_t1t2 * 2, v_t1tmt2.detach())   # shortcut loss
 
         loss = loss1 + loss2
