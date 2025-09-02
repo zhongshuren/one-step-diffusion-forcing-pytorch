@@ -39,7 +39,7 @@ v_t1t2 = v(z1, t1, t2, past_x=z2)
 v_t1tm = v(z1, t1, tm, past_x=z2)
 v_tmt2 = v(z1 + v_t1tm * (tm - t1), tm, t2, past_x=z2)
 
-loss1 = mse(v_t0, x - e) # ReFlow loss
+loss1 = mse(v_t0, x - e) # Flow Matching loss
 loss2 = mse(v_t1t2 * 2, stop_grad(v_t1tm + v_tmt2))   # shortcut loss
 
 loss = loss1 + loss2
